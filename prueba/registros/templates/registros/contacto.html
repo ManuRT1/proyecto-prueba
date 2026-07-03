@@ -1,0 +1,43 @@
+{% extends "inicio/encabezado.html" %}
+{% load static %}
+
+{% block titulo %}Contacto{% endblock %}
+
+{% block imagen_menu %}{% static 'inicio/images/contacto.jpg' %}{% endblock %}
+
+{% block info %}Contacto{% endblock %}
+
+{% block contenido2 %}
+    <div class="page-header">
+        <div class="page-title">
+            <h3>Contacto <small>Envíanos un mensaje o sugerencia</small></h3>
+        </div>
+    </div>
+{% endblock %}
+
+{% block texto_breadcrumb %}Inicio / Contacto{% endblock %}
+
+{% block contenido %}
+    <form class="form-horizontal" action="{% url 'Registrar'%}" method="POST" role="form">
+        {% csrf_token%}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Nombre:</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="usuario" class="form-control" placeholder="Escribe tu nombre completo">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Mensaje:</label>
+                    <div class="col-sm-10">
+                        <textarea name="mensaje" cols="50" rows="10" class="form-control" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                </div>
+                <div class="form-actions text-right">
+                    <input type="submit" value="Enviar" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
