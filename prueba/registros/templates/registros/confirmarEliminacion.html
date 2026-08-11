@@ -1,0 +1,28 @@
+{% extends "inicio/encabezado.html" %}
+{% load static %}
+{% block titulo %}Confirmar Eliminacion{% endblock %}
+{% block imagen_menu %}{% static 'inicio/images/home.png' %}{% endblock %}
+{% block info %}Eliminacion{% endblock %}
+{% block contenido2 %}
+    <div class="page-header">
+        <div class="page-title">
+            <h3> <small>Pagina para Eliminar </small></h3>
+        </div>
+    </div>
+{% endblock %}
+{% block texto_breadcrumb %}Inicio / confirmarEliminacion{% endblock %}
+{% block contenido %}
+<form method='POST'>
+{% csrf_token %}   
+<div class="callout-danger fade in">
+    <h5>Eliminando Comentario</h5>
+    <p>¿estas seguro que deseas <strong> Eliminar</strong> el comentario? </p>
+</div>
+<button type"submit" class="btn btn-danger">Si</button>
+<a href="{% url 'ConsultaComentarios' %}" class="btn btn-primary">Cancelar</a>
+</form>     
+
+
+{% endblock contenido %}
+
+

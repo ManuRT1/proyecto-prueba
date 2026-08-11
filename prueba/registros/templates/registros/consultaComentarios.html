@@ -31,8 +31,8 @@
                     <tr>
                         <td>{{ c.usuario }}</td>
                         <td>{{ c.mensaje }}</td>
-                        <td><a href="#">Editar</a></td>
-                        <td><a href="#">Eliminar</a></td>
+                        <td><a href="{% url 'Editar' c.id %}">Editar</a></td>
+                        <td><a href="{% url 'Eliminar' c.id %}">Eliminar</a></td>
                     </tr>
                     {% empty %}
                     <tr>
